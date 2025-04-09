@@ -1,0 +1,7 @@
+selenium~=4.11.2
+Appium-Python-Client~=2.11.1
+pytest~=7.4.0
+Appium-Python-Client~=2.11.1
+allure-pytest==2.13.2
+pytest-rerunfailures~=12.0
+requests~=2.31.0

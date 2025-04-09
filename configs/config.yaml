@@ -1,0 +1,9 @@
+configServer: "http://127.0.0.1:4723"
+platformName: "iOS"
+platformVersion: "16.5"        # 设备iOS版本
+deviceName: "iPhone14"    # 设备名称
+udid: "00008110-000A1D802C82001E"  # 设备UDID
+automationName: "XCUITest"
+app: "live.fanatics.FanaticsCollect-Development"   # 或使用bundleId
+noReset: true
+includSafariInWebviews: true
