@@ -15,3 +15,18 @@ class HomePage(BasePage):
     def guest_mode(self):
         self.click(*self.browseTheAppButton)
 
+    def is_on_logged_out_home(self):
+        try:
+            return (
+                self.driver.find_element(*self.createAccountButton).is_displayed() and
+                self.driver.find_element(*self.loginButton).is_displayed() and
+                self.driver.find_element(*self.browseTheAppButton).is_displayed()
+            )
+        except Exception:
+            return False
+
+    def is_login_page(self):
+        try:
+            return self.driver.find_element((AppiumBy.ACCESSIBILITY_ID,'Email')).is_displayed()
+        except Exception:
+            return False

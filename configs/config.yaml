@@ -1,9 +1,8 @@
-configServer: "http://127.0.0.1:4723"
-platformName: "iOS"
+appiumServer: "http://127.0.0.1:4723"
 platformVersion: "16.5"        # 设备iOS版本
 deviceName: "iPhone14"    # 设备名称
-udid: "00008110-000A1D802C82001E"  # 设备UDID
-automationName: "XCUITest"
+udid: "auto"  # 设备UDID
 app: "live.fanatics.FanaticsCollect-Development"   # 或使用bundleId
 noReset: true
-includSafariInWebviews: true
+includeSafariInWebviews: true
+useNewWDA: False
