@@ -9,7 +9,7 @@ import datetime
 import os
 from utils.constants import REPORT_DIR
 
-
+#----------- driver
 @pytest.fixture(scope="function")
 def setup_driver():
     """初始化Appium driver"""
@@ -21,7 +21,8 @@ def setup_driver():
         if driver:
             driver.quit()
 
-# conftest.py
+# ---------- pages
+
 @pytest.fixture
 def login_page(driver):
     from pages.login_page import LoginPage
@@ -37,7 +38,18 @@ def marketplace_page(driver):
     from pages.marketplace_page import MarketplacePage
     return MarketplacePage(driver)
 
+@pytest.fixture
+def pdp(driver):
+    from pages.product_details_page import PPD
+    return PPD(driver)
 
+@pytest.fixture
+def checkout_page(driver):
+    from pages.checkout_page import CheckoutPage
+    return CheckoutPage(driver)
+
+
+# ------------
 @pytest.fixture(scope="function")
 def marketplace(driver, request, marketplace_page):
     """Marketplace模块的fixture，自动处理登录状态和tab恢复"""

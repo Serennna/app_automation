@@ -66,6 +66,18 @@ class BasePage:
         except:
             return False
 
+    def is_selected(self, locator_type, value, index: Optional[int] = None) -> bool:
+        try:
+            return self.find(locator_type, value, index).is_selected()
+        except:
+            return False
+
+    def is_enabled(self, locator_type, value, index: Optional[int] = None) -> bool:
+        try:
+            return self.find(locator_type, value, index).is_enabled()
+        except:
+            return False
+
     def get_attribute(self, locator_type, value, attribute: str, index: Optional[int] = None):
         return self.find(locator_type, value, index).get_attribute(attribute)
     '''Time wait'''

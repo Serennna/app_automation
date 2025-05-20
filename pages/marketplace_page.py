@@ -6,10 +6,12 @@ from appium.webdriver.common.appiumby import AppiumBy
 class MarketplacePage(BasePage):
     PROFILE_ICON = (AppiumBy.CLASS_NAME, "XCUIElementTypeImage")
     MARKETPLACE_TAB = (AppiumBy.XPATH,'''//XCUIElementTypeButton[@name="Marketplace"]''')
-    BUY_NOW_PILL = (AppiumBy.ACCESSIBILITY_ID,'Buy Now')
-    AUCTION_PILL = (AppiumBy.ACCESSIBILITY_ID,'Auction')
-    PREMIER_AUCTION_PILL = (AppiumBy.ACCESSIBILITY_ID,'Premier Auction')
+    BUY_NOW_PILL = (AppiumBy.XPATH,'//XCUIElementTypeButton[@name="Buy Now"]')
+    AUCTION_PILL = (AppiumBy.XPATH,'//XCUIElementTypeButton[@name="Auction"]')
+    PREMIER_AUCTION_PILL = (AppiumBy.XPATH,'//XCUIElementTypeButton[@name="Premier Auction"]')
     SEARCH_BAR =  (AppiumBy.ACCESSIBILITY_ID,'search')
+    CARD_IMAGE = (AppiumBy.XPATH, '(//XCUIElementTypeScrollView//XCUIElementTypeImage[1]')
+
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -33,6 +35,10 @@ class MarketplacePage(BasePage):
 
     def click_buy_premiee_aucion_pill(self):
         self.click(*self.PREMIER_AUCTION_PILL)
+
+    def get_item_in_scroll_view_by_index(self,index):
+        """get the first item in scroll view"""
+        return self.find(*self.CARD_IMAGE, index)
 
     ''' status Check'''
     def is_logged_in(self):
