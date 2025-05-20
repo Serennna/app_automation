@@ -6,6 +6,9 @@ class HomePage(BasePage):
     loginButton = (AppiumBy.ACCESSIBILITY_ID, 'Log in')
     browseTheAppButton = (AppiumBy.ACCESSIBILITY_ID, 'Browse the app')
 
+    def __init__(self, driver):
+        super().__init__(driver)
+
     def go_to_create_account_page(self):
         self.click(*self.createAccountButton)
 

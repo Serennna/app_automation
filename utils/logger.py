@@ -27,4 +27,3 @@ def setup_logger(name='appium_test'):
 
     return logger
 
-log = setup_logger()
